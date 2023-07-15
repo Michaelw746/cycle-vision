@@ -7,8 +7,8 @@ import {
   onPress,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import Lock from "./src/Tabs/Lock";
-import Track from "./src/Tabs/Track";
+import Lock from "./src/Tabs/LockTab";
+import Track from "./src/Tabs/Track"
 import  {createStackNavigator} from "@react-navigation/stack"
 import Home from "./src/Tabs/Home";
 
