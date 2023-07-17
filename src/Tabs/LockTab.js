@@ -1,12 +1,38 @@
-import { StyleSheet, Text, View, Pressable, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Image,
+  render,
+  flagImage,
+  Switch,
+      
+} from "react-native";
+
+import React, { useState } from 'react';
+
 import { TouchableOpacity } from "react-native";
 
 export default function LockTab({ navigation }) {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const [imageSource, setImageSource] = useState(require("../../assets/bi_unlock-fill.png"));
+
+  const toggleSwitch = () => {
+    setIsEnabled(previousState => !previousState);
+    setImageSource(isEnabled ? require("../../assets/bi_unlock-fill.png") : require("../../assets/vector3.png"));
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => console.log('Pressed!')}>
-        <Image source={require("../../assets/lock.png")} />
-        </TouchableOpacity>
+        <Image source={imageSource} />
+      </TouchableOpacity>
+      <Switch
+        trackColor={{ false: '#ffffff', true: '#2E3A53' }}
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
     </View>
   );
 }

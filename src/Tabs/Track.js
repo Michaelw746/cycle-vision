@@ -43,8 +43,7 @@ export default function  Track({navigation}) {
     
     <View style={styles.zoomWrapper}>
           
-      <Text>track</Text>
-      <Button title="Go back to Lock" onPress={() => navigation.navigate('Lock')}/>
+      <Text>tracking the bike</Text>
       <MapView style={styles.map} region = {mapRegion}>
       <Marker coordinate={mapRegion} title ='Marker'/>
       </MapView>
